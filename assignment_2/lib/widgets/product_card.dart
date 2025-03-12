@@ -10,16 +10,6 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
-      // onTap: () {
-      //   Navigator.push(
-      //     context, // Pass context to Navigator
-      //     MaterialPageRoute(
-      //       builder: (context) => ProductDetailsScreen(product: product),
-      //     ),
-      //   );
-      // },
-
       onTap: () {
         Navigator.push(
           context,
@@ -27,7 +17,8 @@ class ProductCard extends StatelessWidget {
             transitionDuration: const Duration(milliseconds: 400),
             pageBuilder: (context, animation, secondaryAnimation) =>
                 ProductDetailsScreen(product: product),
-            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
               return SlideTransition(
                 position: Tween<Offset>(
                   begin: const Offset(0, 0), // Start from bottom
@@ -94,7 +85,6 @@ class ProductCard extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-
 
                   // Product Rating using RatingBarIndicator
                   RatingBarIndicator(
